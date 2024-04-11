@@ -3,93 +3,59 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Time-Aligned Captions for Multi-Scene Text-to-Video Generation">
-  <meta name="keywords" content="TACL, Multi-Scene T2V">
+        content="TALC:Time-Aligned Captions for Multi-Scene Text-to-Video Generation">
+  <meta name="keywords" content="video,video generation,time-aligned, talc">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Time-Aligned Captions for Multi-Scene Text-to-Video Generation</title>
+  <title>TACL</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
-  <!-- <script>
+  <script>
     window.dataLayer = window.dataLayer || [];
 
     function gtag() {
       dataLayer.push(arguments);
     }
-/Users/panlu/Library/Mobile Documents/com~apple~CloudDocs/ImageMath/visual-mathqa-server/data_final/images
+
     gtag('js', new Date());
 
     gtag('config', 'G-PYVRSFMDRL');
-  </script> -->
+  </script>
 
+<<<<<<< HEAD
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+=======
 <!--   <link rel="icon" href="./static/images/dove.png"> -->
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+>>>>>>> 185c36cf89aea368f9cb245af555bd3f151cd24a
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="stylesheet" href="./static/css/leaderboard.css">
-
-  <!-- <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bulma.min.css" rel="stylesheet">
-  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script> -->
-  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/explorer-index.js"></script>
-  <script src="./static/js/question_card.js"></script>
-
-  <script src="./static/js/leaderboard_testmini.js"></script>  
-  <script src="./data/results/output_folders.js" defer></script>
-  <script src="./data/results/model_scores.js" defer></script>
-
-  <script src="./visualizer/data/data_public.js" defer></script>
+  <script src="./static/js/index.js"></script>
 </head>
 <body>
-
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <!-- <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a> -->
-      <!-- @PAN TODO: consider adding links? -->
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://video-con.github.io/">
-            VideoCon
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
-
 
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
+<<<<<<< HEAD
+          <h1 class="title is-1 publication-title">TALC:Time-Aligned Captions for Multi-Scene Text-to-Video Generation</h1>
+=======
           <h1 class="title is-size-2 publication-title is-bold">
             <span class="dove" style="vertical-align: middle">TALC</span>
             </h1>
@@ -99,6 +65,7 @@
             <!-- <br> -->
             <!-- with GPT-4V, Bard, and Other Large Multimodal Models -->
           </h2>
+>>>>>>> 185c36cf89aea368f9cb245af555bd3f151cd24a
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <span class="author-block">
@@ -120,66 +87,20 @@
                 <span class="author-block"><sup>1</sup> University of California Los Angeles,&nbsp;&nbsp;</span>
                 <span class="author-block"><sup>2</sup> Google Research&nbsp;&nbsp;</span>    
               </div>
-        
-          <!-- <section> -->
-            <!-- <div class="section" id="org-banners" style="display:fle">
-              <a href="https://www.ucla.edu/" target="_blank" rel="external">
-                  <img class="center-block org-banner" src="static/images/ucla.png" style="height:3em">
-              </a>
-              <a href="https://www.washington.edu/" target="blank" class="ext-link">
-                  <img class="center-block org-banner" src="static/images/uw.png" style="height:3em">
-              </a>
-              <a href="https://www.microsoft.com/en-us/research/" target="_blank" rel="external">
-                  <img class="center-block org-banner" src="static/images/microsoft.png" style="height:3em">
-              </a>
-            </div> -->
-          <!-- </section> -->
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <!-- <span class="link-block"> -->
-                <!-- @hritik:change links -->
-                <!-- <a href="https://arxiv.org/abs/2311.10111.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span> -->
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2311.10111"
                    class="external-link button is-normal is-rounded is-dark">
-                <!-- <a href="https://lupantech.github.io/papers/arxiv23_mathvista.pdf"
-                   class="external-link button is-normal is-rounded is-dark"> -->
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>Arxiv</span>
                 </a>
               </span>
-              <!-- Video Link. -->
-              <!-- <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span> -->
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/Hritikbansal/videocon"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. -->
+              <!-- Dataset Link -->
               <span class="link-block">
                 <a href="https://huggingface.co/datasets/videocon/videocon"
                    class="external-link button is-normal is-rounded is-dark">
@@ -189,31 +110,25 @@
                       <!-- 🔗 -->
                   </span>
                   <span>Dataset</span>
-                </a>
-              </span>
-              <!-- Model Link. -->
+                  <!-- Model Link -->
+                <span class="link-block">
+                    <a href="https://huggingface.co/datasets/videocon/videocon"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                          <!-- <i class="far fa-images"></i> -->
+                          <p style="font-size:18px">🤗</p>
+                          <!-- 🔗 -->
+                      </span>
+                      <span>Model</span>
+              <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://huggingface.co/videocon/videocon-model"
+                <a href="https://github.com/hritikbansal/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <!-- <i class="far fa-images"></i> -->
-                      <p style="font-size:18px">🤗</p>
-                      <!-- 🔗 -->
+                      <i class="fab fa-github"></i>
                   </span>
-                  <span>Model</span>
-                </a>
-              </span>
-              <!-- Twitter Link. -->
-              <span class="link-block">
-                <a href="https://x.com/hbXNov/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <!-- <i class="far fa-images"></i> -->
-                      <!-- 💻🔗 -->
-                      <p style="font-size:18px">🌐</p>
-                  </span>
-                  <span>Twitter</span>
-                </a>
+                  <span>Code</span>
+                  </a>
               </span>
             </div>
 
@@ -225,19 +140,17 @@
 </section>
 
 
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="content has-text-centered">
-      <img src="static/images/tease_scores_gpt4v.png" alt="geometric reasoning" width="99%"/>
-      <p> Accuracy scores of one leading LLM (i.e., PoT GPT-4), four primary LMMs, random chance, and human performance our proposed 
-      <img src="static/images/mathvista.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-      <span class="mathvista">MathVista</span>
-      across mathematical reasoning and visual context types. PoT refers to program-of-thought prompting, and PoT GPT-4 is a textual LLM augmented with the caption and OCR text. GPT-4V is manually evaluated via the playground chatbot.
-      </p>
-    </div>
-  </div>
-</section> -->
+<section class="hero teaser">
+  <!-- <div class="container is-max-desktop"> -->
+  <div class="container">
+    <div class="hero-body" style="display: flex; justify-content: center;">
+      <!-- <h2 class="title is-3" style="text-align: center;">Summary Video</h2> -->
+      <video id="teaser" autoplay controls muted loop width="80%">
+        <source src="./static/images/videodirectorgpt_teaser.mp4" type="video/mp4">
+      </video>
 
+<<<<<<< HEAD
+=======
 
 <!-- <section class="section">
   <div class="container" style="margin-top: -150px; margin-bottom: -100px;">
@@ -249,32 +162,139 @@
               <p> (Left) We show that the conditional preference acquisition method would require the annotators to compare two responses for an identical instruction. (Right) We show that the annotators can also assign rankings jointly over instruction-response pairs. Specifically, the annotator prefers a helpful response (e.g., Apple ... Grape) over a response that ignores the context of the instruction (e.g., wear sunscreen ... litter). Our framework thus elicits preferences that are obfuscated in the prior approach. </p>
             </div>
       </div>
+>>>>>>> 185c36cf89aea368f9cb245af555bd3f151cd24a
     </div>
   </div>
 </section> -->
 
 
 <section class="section">
-  <div class="container" style="margin-bottom: 2vh;">
+  <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-          Large Language Model (LLM) alignment hinges on the quality of preferences acquired from human or AI annotators. Among the various preference acquisition protocols, the ranking-based approach is the most widely used paradigm for aligning LLMs. Specifically, in this approach the annotator has to compare a pair of responses conditioned on a fixed context. However, such conditional rankings often fail to capture the complex and multidimensional aspects of human preferences. 
-          <p>
-            In this work, we revisit the traditional paradigm of preference acquisition and propose a new axis that is based on eliciting preferences jointly over the instruction-response pairs. While prior preference optimizations are designed for conditional ranking protocols (e.g., DPO), our proposed preference acquisition protocol introduces <b>DOVE</b>, a new preference optimization objective that upweights the joint probability of the chosen instruction-response pair over the rejected instruction-response pair. Interestingly, we find that the LLM trained with joint instruction-response preference data using <b>DOVE</b> outperforms the LLM trained with DPO by 5.2% and 3.3% win-rate for the summarization and open-ended dialogue datasets, respectively.
-            Our findings reveal that joint preferences over instruction and response pairs can significantly enhance the alignment of LLMs by tapping into a broader spectrum of human preference elicitation.
+          Recent advances in diffusion-based generative modeling have led to the development of text-to-video (T2V) models that can generate high-quality videos 
+          conditioned on a text prompt. Most of these T2V models often produce single-scene video clips that depict an entity performing a particular action (e.g., ‘a red panda
+          climbing a tree’). However, it is pertinent to synthesize multi-scene generated videos since they are ubiquitous in the real-world (e.g., ‘a red panda climbing a tree’ followed by ‘the red panda sleeps on the top of the tree’).
           </p>
+
+          <p>
+            To generate multi-scene videos from the pretrained T2V model, we introduce Time-Aligned Captions (TALC) framework. In particular, we introduce a simple and novel
+           inductive bias to the text-conditioning mechanism in the T2V architecture that makes the model aware of the temporal alignment between the video scenes and their respective scene descriptions.
+          </p>
+
+          <p>
+            As a result, we find that the T2V model can generate visually consistent (e.g., entity and background) videos that adhere to
+            the multi-scene text descriptions. Further, we finetune the pretrained T2V model
+            with multi-scene video-text data using the TALC framework. We observe that
+            TALC-finetuned model outperforms the baseline methods by 15.5 points on the 
+            overall score, average of visual consistency and text adherence, across a diverse 
+            task prompts and number of generated scenes under the automatic and human evaluations.
+          </p>
+           
+          
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-</div>
+  </div>
 </section>
 
-<!-- DATASET SECTION -->
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Summary</h2>
+
+        <img src="./static/images/figure2.png" alt="Teaser" width="80%">
+        <div class="content has-text-justified">
+          Figure 1: <b>Illustration of our two-stage framework for long, multi-scene video generation from text.</b> In the first stage,
+          we employ the LLM as a video planner to craft a video plan, which provides an overarching plot for videos with
+          multiple scenes, guiding the downstream video generation process. The video plan consists of scene-level text
+          descriptions, a list of the entities and background involved in each scene, frame-by-frame entity layouts (bounding boxes),
+          and consistency groupings for entities and backgrounds. In the second stage, we utilize <b>Layout2Vid</b>, a grounded video
+          generation module, to render videos based on the video plan generated in the first stage. This module uses the same image
+          and text embeddings to represent identical entities and backgrounds from video plan, and allows for spatial control over
+          entity layouts through the Guided 2D Attention in the spatial attention block.
+        </div>
+
+        <br><br>
+
+        <h3 class="title is-4">Video Planning: Generating Video Plans with LLMs</h3>
+        <div class="content has-text-justified">
+          <p>
+            As illustrated in the blue part of Figure 1, GPT-4 (OpenAI, 2023) acts as a
+            planner and provides a detailed video plan from a single text prompt to guide the downstream video generation.
+            Our video plan consists of four components: (1) multi-scene descriptions: a sentence describing each scene,
+            (2) entities: names along with their 2D bounding boxes, (3) background: text description of the location of each scene,
+            and (4) consistency groupings: scene indices for each entity/background indicating where they should remain visually consistent. 
+          </p>
+          <p>
+            In the first step, we use GPT-4 to expand a single text prompt into a multi-scene video plan.
+            Each scene comes with a text description, a list of entities (names and their 2D bounding boxes),
+            and a background. For this step, we construct the input prompt using the task instruction, one in-context example,
+            and the input text from which we aim to generate a video plan. Subsequently, we group entities and backgrounds
+            that appear across different scenes using an exact match. For instance, if the 'chef' appears in scenes 1-4 and
+            'oven' only appears in scene 1, we form the entity consistency groupings as {chef:[1,2,3,4], oven:[1]}.
+            In the subsequent video generation stage, we use the shared representations for the same entity/background
+            consistency groups to ensure they maintain temporally consistent appearances.
+          </p>
+          <p>
+            In the second step, we expand the detailed layouts for each scene using GPT-4.
+            We generate a list of bounding boxes for the entities in each frame based on the list of entities and the scene description.
+            For each scene, we produce layouts for 8 frames, then linearly interpolate the bounding boxes to gather bounding box information
+            for denser frames (e.g., 16 frames). We utilize the [x0 , y0 , x1 , y1 ] format for bounding boxes, where each coordinate is
+            normalized to fall within the range [0,1]. For in-context examples, we present 0.05 as the minimum unit for the bounding box,
+            equivalent to a 20-bin quantization over the [0,1] range. 
+          </p>
+        </div>
+
+
+        <br><br>
+        <h3 class="title is-4">Video Generation: Generating Videos from Video Plans with Layout2Vid</h3>
+        
+        <img src="./static/images/figure3.png" alt="Teaser" width="80%">
+        <div class="content has-text-justified">
+          <b>Figure 2: Overview of (a) spatio-temporal blocks within the diffusion UNet of our Layout2Vid and
+          (b) Guided 2D Attention present in the spatial attention module.</b> (a) The spatio-temporal block comprises
+          four modules: spatial convolution, temporal convolution, spatial attention, and temporal attention.
+          In (b) Guided 2D Attention, we modulate the visual representation with layout tokens and text tokens.
+          For efficient training, only the parameters of the Guided 2D Attention (indicated by
+          the fire symbol, constituting 13% of total parameters) are trained using image-level annotations.
+          The remaining modules in the spatio-temporal block are kept frozen.
+        </div>
+        <br><br>
+
+        <div class="content has-text-justified">
+          <p>
+            Our Layout2Vid module enables layout-guided video generation with explicit spatial control over a list of entities.
+            These entities are represented by their bounding boxes, as well as visual and text content. As depicted in Fig. 2,
+            we build upon the 2D attention mechanism within the spatial attention module of the spatio-temporal blocks in the
+            Diffusion UNet to create the Guided 2D Attention. The Guided 2D Attention takes two conditional inputs to modulate
+            the visual latent representation: (a) layout tokens, conditioned with gated self-attention, and (b) text tokens
+            that describe the current scene, conditioned with cross-attention. Note that we train the Layout2Vid module in
+            a parameter and data-efficient manner by only updating the Guided 2D Attention parameters (while other parameters remain frozen)
+            with image-level annotations (no video-level annotations).
+          </p>
+          <p>
+            To preserve the identity of entities appearing across different frames and scenes,
+            we use shared representations for the entities within the same consistency group.
+            While previous layout-guided text-to-image generation models commonly only used the
+            CLIP text embedding for layout control, we use the CLIP image embedding in addition
+            to the CLIP text embedding for entity grounding.
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section> -->
+
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -283,10 +303,14 @@
         <div class="content has-text-justified">
           <p>
             Boiler Content
+<<<<<<< HEAD
+=======
           </p>
           <p>
             In addition, we show generated videos from baseline and TALC.
+>>>>>>> 185c36cf89aea368f9cb245af555bd3f151cd24a
           </p>
+          
         </div>
         <div class="content is-centered has-text-centered">
           
@@ -298,6 +322,39 @@
             </div>
             <br>
             <div class="example-gifs">
+<<<<<<< HEAD
+              <div>
+                <p><b>Baseline</b></p>
+                <img src="./static/images/17_talc.gif" alt="Teaser" width="80%">
+              </div>
+              <div>
+                <p><b>TALC(Ours)</b></p>
+                <img src="./static/images/17_talc.gif" alt="Teaser" width="80%">
+              </div>
+            </div>
+            <br>
+          <p></p>
+          </div>
+          <div class="content example">
+            <div class="example-prompt" style="text-align: left; width: 80%;margin:auto">
+              Scene 1: A knife slices through a red chili pepper.<br>
+              Scene 2: Fingers remove the seeds from the chili pepper.<br>
+              Scene 3: The chili peppers are cut into small pieces.<br>
+              Scene 4: An orange is peeled with a peeler.<br>
+              </div>
+              <br>
+              <div class="example-gifs">
+                  <div>
+                    <p><b>Baseline</b></p>
+                    <img src="./static/images/26_talc.gif" alt="Teaser" width="80%">
+                  </div>
+                  <div>
+                    <p><b>TALC(Ours)</b></p>
+                    <img src="./static/images/26_talc.gif" alt="Teaser" width="80%">
+                  </div>
+            </div>
+            <br>
+=======
                 <div>
                   <p><b>Baseline</b></p>
                   <img src="./static/images/17_talc.gif" alt="Teaser" width="80%">
@@ -329,102 +386,99 @@
                 </div>
             </div>
             <br>
+>>>>>>> 185c36cf89aea368f9cb245af555bd3f151cd24a
           <p>Caption</p>
           </div>
           <hr>
+          
+          <h3>Human-in-the-Loop Editing</h3>
+          <div class="content example">
+            <br><br>
+            <div class="example-gifs">
+              <div>
+                <p><b>Original Gif</b></p>
+                <img src="./static/images/Original.gif" style="position: relative;top: 49%;transform: translateY(-50%);" alt="Teaser" width="80%">
+              </div>
+              <img src="./static/images/arrow_icon.jpg" style="height:50px;position: absolute;top: 50%;transform: translateY(-50%);">
+              <div style="display: block;position: relative;text-align: center;">
+                <p><b>Human Edit</b></p>
+                <div style="font-size: 1.3em;">Make the horse smaller</div>
+                <img src="./static/images/Edit1.gif" alt="Teaser" width="80%">
+              </div>
+            </div>
+            <br><br>
+            <div class="example-gifs">
+              <div>
+                <p><b>Original Gif</b></p>
+                <img src="./static/images/Original.gif" style="position: relative;top: 49%;transform: translateY(-50%);" alt="Teaser" width="80%">
+              </div>
+              <img src="./static/images/arrow_icon.jpg" style="height:50px;position: absolute;top: 50%;transform: translateY(-50%);">
+              <div style="display: block;position: relative;text-align: center;">
+                <p><b>Human Edit</b></p>
+                <div style="font-size: 1.3em;">Add "grassland" background</div>
+                <img src="./static/images/Edit2.gif" alt="Teaser" width="80%">
+              </div>
+            </div>
+            <br><br>
+            <div class="example-gifs">
+              <div>
+                <p><b>Original Gif</b></p>
+                <img src="./static/images/Original.gif" style="position: relative;top: 49%;transform: translateY(-50%);" alt="Teaser" width="80%">
+              </div>
+              <img src="./static/images/arrow_icon.jpg" style="height:50px;position: absolute;top: 50%;transform: translateY(-50%);">
+              <div style="display: block;position: relative;text-align: center;">
+                <p><b>Human Edit</b></p>
+                <div style="font-size: 1.3em;">Add "night street" background</div>
+                <img src="./static/images/Edit3.gif" alt="Teaser" width="80%">
+              </div>
+            </div>
+            <br>
+            <p>Video generation examples for human-in-the-loop editing.
+              Users can modify the video plan (e.g., add/delete objects, change the background and entity layouts, etc.)
+              to generate customized video contents.
+              Given the same text prompt "A horse running", we provide visualizations with a smaller horse and
+              different backgrounds (i.e., "night street" and "grassland").</p>
+          </div>
         </div>
+
       </div>
     </div>
-</section>
-<!-- RESULTS SECTION -->
-<section class="hero is-light is-small">
-  <div class="hero-body has-text-centered">
-    <h1 class="title is-1 mathvista">LLM Alignment</h1>
   </div>
 </section>
 
 <section class="section">
-  <div class="container">
-
-    <div class="columns is-centered m-6">
-      <div class="column is-full has-text-centered content">
-        <h2 class="title is-3">Results on Mistral-7B</h2>
-        <!-- <p>One example for each reasoning skill required in <span class="mathvista">MathVista</span></p> -->
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="box m-5">
-            <div class="content has-text-justified">
-              <img src="static/images/tldr_figure_win_rate.png" alt="grade-lv" width="50%"/>
-              <p>Results for aligning LLMs with the <b>DOVE</b> preference optimization objective. We compare the win-rate against the gold responses of the supervised finetuned (SFT), DPO-aligned and DOVE-aligned LLM on the TL;DR summarization. In our experiments, we utilize ChatGPT to compare the model responses with the gold responses. We generate model responses for three sampling temperatures. The results are averaged over three runs of the preference optimization objectives.</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-justified">
-              <img src="static/images/ahh_figure_win_rate.png" alt="grade-lv" width="50%"/>
-              <p>
-                Results for aligning LLMs with the <b>DOVE</b> preference optimization objective. We compare the win-rate against the gold responses of the supervised finetuned (SFT), DPO-aligned and DOVE-aligned LLM on the Anthropic-Helpful dataset. In our experiments, we utilize ChatGPT to compare the model responses with the gold responses. We generate model responses for three sampling temperatures. The results are averaged over three runs of the preference optimization objectives.</p>
-              </p>
-            </div>
-          </div>
-              <div class="box m-5">
-                <div class="content has-text-justified">
-                  <img src="static/images/ablation.png" alt="grade-lv" width="50%"/>
-                  <p>
-                    Win-rate against the gold response in the TL;DR and Anthropic-Helpful datasets averaged over three sampling temperatures. We study the impact of the joint preferences over non-identical instructions using DOVE.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-</section>
-
-
-<!-- @PAN TODO: bibtex -->
-<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title is-3 has-text-centered">BibTeX</h2>
-    <pre><code>@misc{bansal2024comparing,
-      title={Comparing Bad Apples to Good Oranges: Aligning Large Language Models via Joint Preference Optimization}, 
-      author={Hritik Bansal and Ashima Suvarna and Gantavya Bhatt and Nanyun Peng and Kai-Wei Chang and Aditya Grover},
-      year={2024},
-      eprint={2404.00530},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
-}
-</code></pre>
-  </div>
-</section> -->
-
-<section>
-  <div class="section" id="org-banners" style="display:flex">
-    <a href="https://www.ucla.edu/" target="_blank" rel="external">
-        <img class="center-block org-banner" src="static/images/ucla.png">
-    </a>
-    <a href="https://research.google/" target="blank" class="ext-link">
-        <img class="center-block org-banner" src="static/images/google_research.png">
-    </a>
+    <h3 class="title">Limitations</h3>
+    <p style="font-size: 0.8em;">
+      Our VideoDirectorGPT framework is for research purposes and is not intended for commercial use (and therefore should be used with caution in real-world applications, with human supervision).
+    </p>
   </div>
 </section>
 
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+@article{Lin2023VideoDirectorGPT,
+        author = {Han Lin and Abhay Zala and Jaemin Cho and Mohit Bansal},
+        title = {VideoDirectorGPT: Consistent Multi-Scene Video Generation via LLM-Guided Planning},
+        year = {2023},
+}
+    </code></pre>
+  </div>
+</section>
 
 
 <footer class="footer">
-  <!-- <div class="container"> -->
-    <div class="content has-text-centered">
-    </div>
+  <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-          <p>
-            This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
+          The webpage was adapted from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
         </div>
       </div>
     </div>
-  <!-- </div> -->
+  </div>
 </footer>
 
 </body>
