@@ -143,6 +143,66 @@ body {
   margin: 10px;
   padding: 10px;
 }
+.container {
+  width: 100%;
+  /* Adjust this percentage value to increase or decrease the width */
+  max-width: 1600px;
+  /* Optional: Set a maximum width for the container */
+  margin: 0 auto;
+  /* Center the container */
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex-basis: 20%;
+  /* Each column occupies 20% of the container's width */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
+  padding: 10px;
+  /* Add padding to each column */
+}
+
+.example {
+  width: 80%;
+  margin: auto;
+}
+
+.example-gifs {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.example-gifs>div {
+  width: 50%;
+  text-align: center;
+}
+
+.example-gifs>div>img {
+  max-width: 350px;
+}
+
+.center {
+  text-align: center;
+}
+
+.example-prompt {
+  font-size: 1.3em;
+}
+
+hr {
+  color: darkgray;
+  background-color: #AAA;
+}
+
+.example-input {
+  width: 175px;
+}
 
 @media screen and (max-width: 768px) {
   #org-banners {
