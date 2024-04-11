@@ -282,17 +282,10 @@
         <h2 class="title is-3">Generated Examples</h2>
         <div class="content has-text-justified">
           <p>
-            We conduct experiments on both single-scene and multi-scene video generation. 
-            For single-scene video generation, we evaluate layout control via VPEval Skill-based prompts,
-            assess object dynamics through ActionBench-Direction prompts adapted from
-            ActionBench-SSV2, and examine open-domain video generation using the MSR-VTT dataset. 
-            For multi-scene video generation, we experiment with two types of input prompts:
-            (1) a list of sentences describing events &#8212; ActivityNet Captions
-            and Coref-SV prompts based on Pororo-SV, and (2) a single sentence from which models
-            generate multi-scene videos &#8212; HiREST.
+            Boiler Content
           </p>
           <p>
-            In addition, we show generated videos from text-only using Karlo and image+text with user-provided images.
+            In addition, we show generated videos from baseline and TALC.
           </p>
         </div>
         <div class="content is-centered has-text-centered">
@@ -300,57 +293,43 @@
           <h3>Coref-SV</h3>
           <div class="content example">
             <div class="example-prompt" style="text-align: left; width: 80%;margin:auto">
-              Scene 1: <b style="color:red;">mouse</b> is holding a book and makes a happy face.<br>
-              Scene 2: <b style="color:red;">he</b> looks happy and talks.<br>
-              Scene 3: <b style="color:red;">he</b> is pulling petals off the flower.<br>
-              Scene 4: <b style="color:red;">he</b> is ripping a petal from the flower.<br>
-              Scene 5: <b style="color:red;">he</b> is holding a flower by <b style="color:red;">his</b> right paw.<br>
-              Scene 6: one paw pulls the last petal off the flower.<br>
-              Scene 7: <b style="color:red;">he</b> is smiling and talking while holding a flower on <b style="color:red;">his</b> right paw.
+              Scene 1: A stuffed toy is lying on the road.<br>
+              Scene 2: A person enters and picks the stuffed toy.<br>
             </div>
             <br>
             <div class="example-gifs">
                 <div>
-                  <p><b>ModelScopeT2V</b></p>
-                  <img src="./static/images/coref_modelscope_1.gif" alt="Teaser" width="80%">
+                  <p><b>Baseline</b></p>
+                  <img src="./static/images/17_talc.gif" alt="Teaser" width="80%">
                 </div>
                 <div>
-                  <p><b>VideoDirectorGPT (Ours)</b></p>
-                  <img src="./static/images/coref_ours_1.gif" alt="Teaser" width="80%">
+                  <p><b>TALC(Ours)</b></p>
+                  <img src="./static/images/17_talc.gif" alt="Teaser" width="80%">
                 </div>
             </div>
             <br>
-          <p>Video generation examples on a Coref-SV prompt. Our video plan's
-            object layouts (overlaid) can guide the Layout2Vid module to generate the same mouse
-            and flower across scenes consistently, whereas ModelScopeT2V loses track of the mouse
-            right after the first scene, generating a human hand and a dog instead of a mouse, and
-            the flower changes color.</p>
+          <p>Caption</p>
           </div>
           <div class="content example">
             <div class="example-prompt" style="text-align: left; width: 80%;margin:auto">
-              Scene 1: it's snowing outside.<br>
-              Scene 2: <b style="color:red;">dog</b> is singing and dancing.<br>
-              Scene 3: <b style="color:red;">its</b> friends are encouraging <b style="color:red;">it</b> to do something.<br>
-              Scene 4: <b style="color:red;">its</b> friends are applauding at <b style="color:red;">it</b>.<br>
-              Scene 5: <b style="color:red;">it</b> is bowing to the audience after the performance.
+            Scene 1: A knife slices through a red chili pepper.<br>
+            Scene 2: Fingers remove the seeds from the chili pepper.<br>
+            Scene 3: The chili peppers are cut into small pieces.<br>
+            Scene 4: An orange is peeled with a peeler.<br>
             </div>
             <br>
             <div class="example-gifs">
                 <div>
-                  <p><b>ModelScopeT2V</b></p>
-                  <img src="./static/images/coref_modelscope_2.gif" alt="Teaser" width="80%">
+                  <p><b>Baseline</b></p>
+                  <img src="./static/images/26_talc.gif" alt="Teaser" width="80%">
                 </div>
                 <div>
-                  <p><b>VideoDirectorGPT (Ours)</b></p>
-                  <img src="./static/images/coref_ours_2.gif" alt="Teaser" width="80%">
+                  <p><b>TALC(Ours)</b></p>
+                  <img src="./static/images/26_talc.gif" alt="Teaser" width="80%">
                 </div>
             </div>
             <br>
-          <p>Video generation examples on a Coref-SV prompt.
-            Our video plan's object layouts (overlaid) can guide the Layout2Vid module to
-            generate the same brown dog and maintain snow across scenes consistently,
-            whereas ModelScopeT2V generates different dogs in different scenes and loses
-            the snow after the first scene.</p>
+          <p>Caption</p>
           </div>
           <hr>
         </div>
