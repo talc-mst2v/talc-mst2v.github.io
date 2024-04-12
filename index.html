@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="VideoDirectorGPT: Consistent Multi-Scene Video Generation via LLM-Guided Planning">
-  <meta name="keywords" content="video,video generation,gpt,video director,video gpt">
+        content="TALC:Time-Aligned Captions for Multi-Scene Text-to-Video Generation">
+  <meta name="keywords" content="video,video generation,gpt,tal, time-aligned">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VideoDirectorGPT (2023)</title>
+  <title>TALC</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
@@ -47,31 +47,33 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">VideoDirectorGPT: Consistent Multi-Scene<br>Video Generation via LLM-Guided Planning</h1>
+          <h1 class="title is-1 publication-title">TALC:Time-Aligned Captions for Multi-Scene Text-to-Video Generation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://hl-hanlin.github.io/">Han Lin</a>
-            </span>, &nbsp;  
-              <span class="author-block">
-                <a href="https://aszala.com/">Abhay Zala</a>
-              </span>, &nbsp;  
-              <span class="author-block">
-                <a href="https://j-min.io">Jaemin Cho</a>
-              </span>, &nbsp;
-              <span class="author-block">
-                <a href="https://www.cs.unc.edu/~mbansal/">Mohit Bansal</a>
-              </span>
-          </div>
+              <a href="https://sites.google.com/view/hbansal" target="_blank">Hritik Bansal</a><sup>1</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="https://yonatanbitton.github.io/" target="_blank">Yonatan Bitton</a><sup>2</sup>,&nbsp;</span>
+            <span class="author-block">
+                <a href="https://www.linkedin.com/in/michal-yarom-767bb281/" target="_blank">Michal Yarom</a><sup>2</sup>,&nbsp;</span>  
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/idan-szpektor-916183/" target="_blank">Idan Szpektor<sup>*</sup></a><sup>2</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="https://aditya-grover.github.io/" target="_blank">Aditya Grover<sup>*</sup></a><sup>1</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="https://web.cs.ucla.edu/~kwchang/" target="_blank">Kai-Wei Chang<sup>*</sup></a><sup>1</sup>,&nbsp;</span>
+  
+            </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">UNC Chapel Hill</span>
-          </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup> University of California Los Angeles,&nbsp;&nbsp;</span>
+              <span class="author-block"><sup>2</sup> Google Research&nbsp;&nbsp;</span>    
+            </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
+              <!-- @hritik: todo PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2309.15091"
+                <a href="https://arxiv.org/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -79,9 +81,9 @@
                   <span>Paper</span>
                 </a>
               </span>
-              <!-- Code Link. -->
+              <!-- @hritik: todo Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/HL-hanlin/VideoDirectorGPT"
+                <a href="https://github.com/hritikbansal"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -89,6 +91,26 @@
                   <span>Code</span>
                   </a>
               </span>
+              <!-- @hritik: todo HuggingFace Link -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/videocon/videocon" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <p style="font-size:20px">&#x1F917;</p>
+                </span>
+                <span>Dataset</span>
+              </a>
+            </span>
+            <!-- @hritik: todo HuggingFace Link -->
+            <span class="link-block">
+              <a href="https://huggingface.co/videocon/videocon-model" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <p style="font-size:20px">&#x1F917;</p>
+              </span>
+              <span>Model</span>
+            </a>
+          </span>
             </div>
 
           </div>
@@ -120,29 +142,26 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
+          <p>
+            Recent advances in diffusion-based generative modeling have led to the develop- ment of text-to-video (T2V) models that can generate high-quality videos condi- tioned on a 
+            text prompt. Most of these T2V models often produce single-scene video clips that depict an entity performing a particular action (e.g., ‘a red panda climbing a tree’). 
+            However, it is pertinent to synthesize multi-scene generated videos since they are ubiquitous in the real-world (e.g., ‘a red panda climbing a tree’ followed by ‘the red 
+            panda sleeps on the top of the tree’).
+          </p>
 
           <p>
-            Although recent text-to-video (T2V) generation methods have seen significant advancements,
-            the majority of these works focus on producing short video clips of a single event with a single background (i.e., single-scene videos).
-            Meanwhile, recent large language models (LLMs) have demonstrated their capability in generating layouts and programs to control downstream
-            visual modules such as image generation models. This raises an important question: <em>can we leverage the knowledge embedded in these LLMs
-            for temporally consistent long video generation?</em>
+            To generate multi-scene videos from the pretrained T2V model, we introduce Time-Aligned Captions (TALC) framework. In particular, we introduce a simple and novel inductive 
+            bias to the text-conditioning mechanism in the T2V architecture that makes the model aware of the temporal alignment between the video scenes and their respective scene 
+            descriptions.
           </p>
+
           <p>
-            In this paper, we propose <b>VideoDirectorGPT</b>, a novel framework for consistent multi-scene video generation that uses the knowledge
-            of LLMs for video content planning and grounded video generation. Specifically, given a single text prompt, we first ask our video planner LLM (GPT-4)
-            to expand it into a 'video plan', which involves generating the scene descriptions, the entities with their respective layouts, the background
-            for each scene, and consistency groupings of the entities and backgrounds. Next, guided by this output from the video planner, our
-            video generator, named Layout2Vid, has explicit control over spatial layouts and can maintain temporal consistency of entities/backgrounds
-            across multiple scenes, while being only trained with image-level annotations. Our experiments demonstrate that our proposed VideoDirectorGPT
-            framework substantially improves layout and movement control in both single- and multi-scene video generation and can generate multi-scene
-            videos with visual consistency across scenes, while achieving competitive performance with SOTAs in open-domain single-scene text-to-video generation.
-            We also demonstrate that our framework can dynamically control the strength for layout guidance and can also generate videos with user-provided images.
+            As a result, we find that the T2V model can generate visually consistent (e.g., entity and background) videos that adhere to the multi-scene text descriptions. Further, 
+            we finetune the pretrained T2V model with multi-scene video-text data using the TALC framework. We observe that TALC-finetuned model outperforms the baseline methods by 
+            15.5 points on the overall score, average of visual consistency and text adherence, across a diverse task prompts and number of generated scenes under the automatic and 
+            human evaluations.
           </p>
-          <p>
-            We hope our framework can inspire future work on better integrating the planning ability 
-            of LLMs into consistent long video generation.
-          </p>
+    
         </div>
       </div>
     </div>
@@ -151,7 +170,7 @@
 
 
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -240,7 +259,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -249,117 +268,53 @@
         <h2 class="title is-3">Generated Examples</h2>
         <div class="content has-text-justified">
           <p>
-            We conduct experiments on both single-scene and multi-scene video generation. 
-            For single-scene video generation, we evaluate layout control via VPEval Skill-based prompts,
-            assess object dynamics through ActionBench-Direction prompts adapted from
-            ActionBench-SSV2, and examine open-domain video generation using the MSR-VTT dataset. 
-            For multi-scene video generation, we experiment with two types of input prompts:
-            (1) a list of sentences describing events &#8212; ActivityNet Captions
-            and Coref-SV prompts based on Pororo-SV, and (2) a single sentence from which models
-            generate multi-scene videos &#8212; HiREST.
+            Boiler Text
           </p>
-          <p>
-            In addition, we show generated videos from text-only using Karlo and image+text with user-provided images.
-          </p>
+          
         </div>
         <div class="content is-centered has-text-centered">
           
           <h3>Coref-SV</h3>
           <div class="content example">
             <div class="example-prompt" style="text-align: left; width: 80%;margin:auto">
-              Scene 1: <b style="color:red;">mouse</b> is holding a book and makes a happy face.<br>
-              Scene 2: <b style="color:red;">he</b> looks happy and talks.<br>
-              Scene 3: <b style="color:red;">he</b> is pulling petals off the flower.<br>
-              Scene 4: <b style="color:red;">he</b> is ripping a petal from the flower.<br>
-              Scene 5: <b style="color:red;">he</b> is holding a flower by <b style="color:red;">his</b> right paw.<br>
-              Scene 6: one paw pulls the last petal off the flower.<br>
-              Scene 7: <b style="color:red;">he</b> is smiling and talking while holding a flower on <b style="color:red;">his</b> right paw.
+              Scene 1: Spiderman is surfing on the waves.<br>
+              Scene 2: Then, Darth Vader is surfing on the same waves.<br>
             </div>
             <br>
             <div class="example-gifs">
                 <div>
-                  <p><b>ModelScopeT2V</b></p>
-                  <img src="./static/images/coref_modelscope_1.gif" alt="Teaser" width="80%">
+                  <p><b>Baseline</b></p>
+                  <img src="./static/images/1_talc.gif" alt="Teaser" width="80%">
                 </div>
                 <div>
-                  <p><b>VideoDirectorGPT (Ours)</b></p>
-                  <img src="./static/images/coref_ours_1.gif" alt="Teaser" width="80%">
+                  <p><b>TALC(Ours)</b></p>
+                  <img src="./static/images/1_talc.gif" alt="Teaser" width="80%">
                 </div>
             </div>
             <br>
-          <p>Video generation examples on a Coref-SV prompt. Our video plan's
-            object layouts (overlaid) can guide the Layout2Vid module to generate the same mouse
-            and flower across scenes consistently, whereas ModelScopeT2V loses track of the mouse
-            right after the first scene, generating a human hand and a dog instead of a mouse, and
-            the flower changes color.</p>
+          <p>Caption.</p>
           </div>
           <div class="content example">
             <div class="example-prompt" style="text-align: left; width: 80%;margin:auto">
-              Scene 1: it's snowing outside.<br>
-              Scene 2: <b style="color:red;">dog</b> is singing and dancing.<br>
-              Scene 3: <b style="color:red;">its</b> friends are encouraging <b style="color:red;">it</b> to do something.<br>
-              Scene 4: <b style="color:red;">its</b> friends are applauding at <b style="color:red;">it</b>.<br>
-              Scene 5: <b style="color:red;">it</b> is bowing to the audience after the performance.
+              Scene 1: A stuffed toy is lying on the road.<br>
+              Scene 2: A person enters and picks the stuffed toy.<br>
             </div>
             <br>
             <div class="example-gifs">
                 <div>
-                  <p><b>ModelScopeT2V</b></p>
-                  <img src="./static/images/coref_modelscope_2.gif" alt="Teaser" width="80%">
+                  <p><b>Baseline</b></p>
+                  <img src="./static/images/17_talc.gif" alt="Teaser" width="80%">
                 </div>
                 <div>
-                  <p><b>VideoDirectorGPT (Ours)</b></p>
-                  <img src="./static/images/coref_ours_2.gif" alt="Teaser" width="80%">
+                  <p><b>TALC(Ours)</b></p>
+                  <img src="./static/images/17_talc.gif" alt="Teaser" width="80%">
                 </div>
             </div>
             <br>
-          <p>Video generation examples on a Coref-SV prompt.
-            Our video plan's object layouts (overlaid) can guide the Layout2Vid module to
-            generate the same brown dog and maintain snow across scenes consistently,
-            whereas ModelScopeT2V generates different dogs in different scenes and loses
-            the snow after the first scene.</p>
+          <p>Caption.</p>
           </div>
           <hr>
-          <h3>HiREST</h3>
-          <div class="content example">
-            <p class="example-prompt">make caraway cakes</p>
-            <div class="example-gifs">
-                <div>
-                  <p><b>ModelScopeT2V</b></p>
-                  <img src="./static/images/hirest_modelscope_1.gif" alt="Teaser" width="80%">
-                </div>
-                <div>
-                  <p><b>VideoDirectorGPT (Ours)</b></p>
-                  <img src="./static/images/hirest_ours_1.gif" alt="Teaser" width="80%">
-                </div>
-            </div>
-            <br>
-            <p>Comparison of generated videos on a HiREST prompt.
-              Our model is able to generate a detailed video plan that properly expands
-              the original text prompt to show the process, has accurate object bounding
-              box locations (overlaid), and maintains the consistency of the person across
-              the scenes. ModelScopeT2V only generates the final caraway cake and that cake
-              is not consistent between scenes.</p>
-          </div>
-          <div class="content example">
-            <p class="example-prompt">make strawberry surprise</p>
-            <div class="example-gifs">
-                <div>
-                  <p><b>ModelScopeT2V</b></p>
-                  <img src="./static/images/hirest_modelscope_2.gif" alt="Teaser" width="80%">
-                </div>
-                <div>
-                  <p><b>VideoDirectorGPT (Ours)</b></p>
-                  <img src="./static/images/hirest_ours_2.gif" alt="Teaser" width="80%">
-                </div>
-            </div>
-            <br>
-          <p>Comparison of generated videos on a HiREST prompt.
-            Our VideoDirectorGPT generates a detailed video plan that properly expands the original text prompt,
-            ensures accurate object bounding box locations (overlaid), and maintains the consistency of the
-            person across the scenes. ModelScopeT2V only generates strawberries.</p>
-          </div>
-          <hr>
+          
           <h3>ActionBench-Direction prompts</h3>
           <div class="content example">
             <p class="example-prompt">pushing <b style="color:red;">stuffed animal</b> from <b>left to right</b></p>
