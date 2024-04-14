@@ -205,88 +205,67 @@
   </div>
 </section>
 
-<!-- <section class="section">
+
+
+<!-- Method -->
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Summary</h2>
+        <h2 class="title is-3">Method</h2>
 
-        <img src="./static/images/figure2.png" alt="Teaser" width="80%">
+        <img src="./static/images/talc.png" alt="Teaser" width="80%">
         <div class="content has-text-justified">
-          Figure 1: <b>Illustration of our two-stage framework for long, multi-scene video generation from text.</b> In the first stage,
-          we employ the LLM as a video planner to craft a video plan, which provides an overarching plot for videos with
-          multiple scenes, guiding the downstream video generation process. The video plan consists of scene-level text
-          descriptions, a list of the entities and background involved in each scene, frame-by-frame entity layouts (bounding boxes),
-          and consistency groupings for entities and backgrounds. In the second stage, we utilize <b>Layout2Vid</b>, a grounded video
-          generation module, to render videos based on the video plan generated in the first stage. This module uses the same image
-          and text embeddings to represent identical entities and backgrounds from video plan, and allows for spatial control over
-          entity layouts through the Guided 2D Attention in the spatial attention block.
+          Figure 2: <b>The architecture of Time-Aligned Captions (TALC).</b> 
+          During the generation process of the video, the initial half of the video frames are conditioned on the embeddings of the description of scene 1 (ry1 ), while the subsequent video frames are conditioned on the embeddings of the description of scene 2 (ry2 ).
         </div>
 
         <br><br>
 
-        <h3 class="title is-4">Video Planning: Generating Video Plans with LLMs</h3>
+        <h3 class="title is-4">TALC: Time-Aligned Captions for Multi-Scene T2V Generation</h3>
         <div class="content has-text-justified">
           <p>
-            As illustrated in the blue part of Figure 1, GPT-4 (OpenAI, 2023) acts as a
-            planner and provides a detailed video plan from a single text prompt to guide the downstream video generation.
-            Our video plan consists of four components: (1) multi-scene descriptions: a sentence describing each scene,
-            (2) entities: names along with their 2D bounding boxes, (3) background: text description of the location of each scene,
-            and (4) consistency groupings: scene indices for each entity/background indicating where they should remain visually consistent. 
+           Existing T2V generative models such as Modelscope and Lumiere are trained with large-scale datasets where each instance consists of a video and a human-written video description. 
+           These videos either lack the depiction of multiple events, or the video descriptions only focus on the main event in the video. 
+           As a result, the pretrained T2V generative models only synthesize single video scenes depicting individual events.
           </p>
           <p>
-            In the first step, we use GPT-4 to expand a single text prompt into a multi-scene video plan.
-            Each scene comes with a text description, a list of entities (names and their 2D bounding boxes),
-            and a background. For this step, we construct the input prompt using the task instruction, one in-context example,
-            and the input text from which we aim to generate a video plan. Subsequently, we group entities and backgrounds
-            that appear across different scenes using an exact match. For instance, if the 'chef' appears in scenes 1-4 and
-            'oven' only appears in scene 1, we form the entity consistency groupings as {chef:[1,2,3,4], oven:[1]}.
-            In the subsequent video generation stage, we use the shared representations for the same entity/background
-            consistency groups to ensure they maintain temporally consistent appearances.
-          </p>
+          <b>TALC</b> is a novel and effective framework to generate multi-scene videos from diffusion T2V generative models based on the scene descriptions. 
+          TALC leverages the widely adopted text conditioning mechanism and modifies it to be aware of the alignment between text descriptions and individual video scenes. 
+         </p>
           <p>
-            In the second step, we expand the detailed layouts for each scene using GPT-4.
-            We generate a list of bounding boxes for the entities in each frame based on the list of entities and the scene description.
-            For each scene, we produce layouts for 8 frames, then linearly interpolate the bounding boxes to gather bounding box information
-            for denser frames (e.g., 16 frames). We utilize the [x0 , y0 , x1 , y1 ] format for bounding boxes, where each coordinate is
-            normalized to fall within the range [0,1]. For in-context examples, we present 0.05 as the minimum unit for the bounding box,
-            equivalent to a 20-bin quantization over the [0,1] range. 
+            We illustrate the framework in Figure 2. 
+            TALC aims to equip the generative model with the ability to depict all the events in the multi-scene descriptions, the visual consistency is ensured by the temporal modules (attentions and convolution blocks) in the denoiser network. 
+            TACL can be applied to the pretrained T2V such as Modelscope and Lumiere during inference.
           </p>
         </div>
 
 
         <br><br>
-        <h3 class="title is-4">Video Generation: Generating Videos from Video Plans with Layout2Vid</h3>
+        <h3 class="title is-4">Multi-Scene Video-Text Data Generation</h3>
         
-        <img src="./static/images/figure3.png" alt="Teaser" width="80%">
+        <img src="./static/images/data_gen.png" alt="Teaser" width="80%">
         <div class="content has-text-justified">
-          <b>Figure 2: Overview of (a) spatio-temporal blocks within the diffusion UNet of our Layout2Vid and
-          (b) Guided 2D Attention present in the spatial attention module.</b> (a) The spatio-temporal block comprises
-          four modules: spatial convolution, temporal convolution, spatial attention, and temporal attention.
-          In (b) Guided 2D Attention, we modulate the visual representation with layout tokens and text tokens.
-          For efficient training, only the parameters of the Guided 2D Attention (indicated by
-          the fire symbol, constituting 13% of total parameters) are trained using image-level annotations.
-          The remaining modules in the spatio-temporal block are kept frozen.
+          Figure 4: <b>The architecture of Time-Aligned Captions (TALC).</b> 
+          During the generation process of the video, the initial half of the video frames are conditioned on the embeddings of the description of scene 1 (ry1 ), while the subsequent video frames are conditioned on the embeddings of the description of scene 2 (ry2 ).
+           
         </div>
         <br><br>
 
         <div class="content has-text-justified">
           <p>
-            Our Layout2Vid module enables layout-guided video generation with explicit spatial control over a list of entities.
-            These entities are represented by their bounding boxes, as well as visual and text content. As depicted in Fig. 2,
-            we build upon the 2D attention mechanism within the spatial attention module of the spatio-temporal blocks in the
-            Diffusion UNet to create the Guided 2D Attention. The Guided 2D Attention takes two conditional inputs to modulate
-            the visual latent representation: (a) layout tokens, conditioned with gated self-attention, and (b) text tokens
-            that describe the current scene, conditioned with cross-attention. Note that we train the Layout2Vid module in
-            a parameter and data-efficient manner by only updating the Guided 2D Attention parameters (while other parameters remain frozen)
-            with image-level annotations (no video-level annotations).
+            Our TALC approach improves multi-scene video generation, but struggles with accurate text adherence due to limited training on relevant data. 
+            Multi-scene video-text datasets are scarce and challenging to compile because creating detailed captions requires considerable time and resources. 
+            Previous projects like ActivityNet have generated captions for specific video scenes, but these scenes often overlap or are spaced far apart, which is problematic for producing smooth transitions in multi-scene videos. 
+            Consequently, there is a lack of continuous, high-quality captions needed for effective training of T2V models.
           </p>
           <p>
-            To preserve the identity of entities appearing across different frames and scenes,
-            we use shared representations for the entities within the same consistency group.
-            While previous layout-guided text-to-image generation models commonly only used the
-            CLIP text embedding for layout control, we use the CLIP image embedding in addition
-            to the CLIP text embedding for entity grounding.
+            We develop a comprehensive multi-scene video-text dataset that will enhance the training of our existing T2V models. 
+            Using the multimodal model Gemini-Pro-Vision, we aim to create synthetic, high-quality video-text data. 
+            We start with a basic video-text dataset and use the PySceneDetect library to identify different scenes within a video. 
+            We then select a representative frame from each scene to capture its essence. 
+            These frames, along with the overall video caption, are fed into a large multimodal model to generate coherent, scene-specific captions. 
+            Using this method, illustrated in Figure 4, we generated 20k video scene-captions. The generated dataset consists of 73% multi-scene videos. 
           </p>
         </div>
 
@@ -294,8 +273,55 @@
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
+
+<!-- Experiments -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiments</h2>
+
+        <img src="./static/images/talc.png" alt="Teaser" width="80%">
+        <div class="content has-text-justified">
+          <b>Figure 4: Automatic evaluation results for (a) ModelScope and (b) Lumiere.</b> 
+          In (a), we observe that TALC-finetuned ModelScope model achieves the highest overall score, that is the average of the visual consistency and text adherence scores. 
+          In (b), we find that TALC framework with the Lumiere base model outperforms merging captions and merging videos on the overall scores. We report the average performance 
+          across the diverse multi-scene prompts and the number of generated scenes.
+        </div>
+
+        <br><br>
+
+        <h3 class="title is-4">TALC: Time-Aligned Captions for Multi-Scene T2V Generation</h3>
+        <div class="content has-text-justified">
+          <p>
+            We show the efficacy of TALC in multi-scene video generation by utilizing two models: ModelScope and Lumiere.
+            We show two settings, one where TALC is applied to the base model during inference and one where we finetune Modelscope on the curate multi-scene video data with TALC framework. 
+          </p>
+          <p>
+          <b>TALC outperforms the baselines without any finetuning</b> 
+          Figure 4(a) and 4(b) show that the base ModelScope and Lumiere with TALC achieves the highest overall scores in multi-scene video generation, outperforming other methods such as merging captions and merging videos.
+          TALC and merging captions excel in visual consistency, whereas merging videos struggle with maintaining consistent visual elements across scenes. TALC also leads in text adherence, demonstrating its effectiveness 
+          in aligning closely with scene-specific descriptions, unlike merging videos which, while high in text adherence, fail to integrate descriptions across multiple scenes effectively. 
+          This indicates that TALC is particularly effective in producing coherent and textually consistent multi-scene videos.
+         </p>
+          <p>
+            <b>Finetuning with TALC achieves the best performance.</b>
+            The ModelScope T2V model was finetuned using the TALC framework and merging captions method to improve performance on multi-scene video-text data. 
+            The finetuning led to TALC achieving the highest overall score, maintaining strong visual consistency while significantly enhancing text adherence. 
+            Conversely, finetuning with merging captions resulted in a notable decrease in visual consistency. 
+            This suggests that finetuning on multi-scene data predominantly benefits text adherence, particularly when using the TALC approach.
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Examples -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -303,7 +329,8 @@
         <h2 class="title is-3">Generated Examples</h2>
         <div class="content has-text-justified">
           <p>
-            Boiler Text
+            We show videos generated using merging captions baseline and TALC for various multi-scene descriptions. Overall, we find that the merging captions baseline generates poor quality videos. 
+            This highlights that finetuning a T2V model with multi-scene video-text data by naively merging the scene-specific descriptions in the raw text space leads to undesirable artifacts in the generated video.
           </p>
           
         </div>
@@ -319,7 +346,7 @@
             <br>
             <div class="example-gifs">
                 <div>
-                  <p><b>Baseline</b></p>
+                  <p><b>Merging Captions</b></p>
                   <img src="./static/images/7_baseline.gif" alt="Teaser" width="80%">
                 </div>
                 <div>
@@ -340,7 +367,7 @@
             <br>
             <div class="example-gifs">
                 <div>
-                  <p><b>Baseline</b></p>
+                  <p><b>Merging Captions</b></p>
                   <img src="./static/images/17_baseline.gif" alt="Teaser" width="80%">
                 </div>
                 <div>
@@ -363,7 +390,7 @@
             <br>
             <div class="example-gifs">
                 <div>
-                  <p><b>Baseline</b></p>
+                  <p><b>Merging Captions</b></p>
                   <img src="./static/images/32_baseline.gif" alt="Teaser" width="80%">
                 </div>
                 <div>
@@ -386,7 +413,7 @@
             <br>
             <div class="example-gifs">
                 <div>
-                  <p><b>Baseline</b></p>
+                  <p><b>Merging Captions</b></p>
                   <img src="./static/images/20_baseline.gif" alt="Teaser" width="80%">
                 </div>
                 <div>
@@ -407,7 +434,7 @@
             <br>
             <div class="example-gifs">
                 <div>
-                  <p><b>Baseline</b></p>
+                  <p><b>Merging Captions</b></p>
                   <img src="./static/images/31_baseline.gif" alt="Teaser" width="80%">
                 </div>
                 <div>
@@ -429,7 +456,7 @@
             <br>
             <div class="example-gifs">
                 <div>
-                  <p><b>Baseline</b></p>
+                  <p><b>Merging Captions</b></p>
                   <img src="./static/images/30_baseline.gif" alt="Teaser" width="80%">
                 </div>
                 <div>
