@@ -221,7 +221,7 @@
         <img src="./static/images/talc.png" alt="Teaser" width="80%">
         <div class="content has-text-justified">
           Figure 2: <b>The architecture of Time-Aligned Captions (TALC).</b> 
-          During the generation process of the video, the initial half of the video frames are conditioned on the embeddings of the description of scene 1 (ry1 ), while the subsequent video frames are conditioned on the embeddings of the description of scene 2 (ry2 ).
+          During the generation process of the video, the initial half of the video frames are conditioned on the embeddings of the description of scene 1, while the subsequent video frames are conditioned on the embeddings of the description of scene 2 (ry2 ).
         </div>
 
         <br>
@@ -251,7 +251,7 @@
         <img src="./static/images/data_gen.png" alt="Teaser" width="80%">
         <div class="content has-text-justified">
           Figure 3: <b>The architecture of Time-Aligned Captions (TALC).</b> 
-          During the generation process of the video, the initial half of the video frames are conditioned on the embeddings of the description of scene 1 (ry1 ), while the subsequent video frames are conditioned on the embeddings of the description of scene 2 (ry2 ).
+          During the generation process of the video, the initial half of the video frames are conditioned on the embeddings of the description of scene 1, while the subsequent video frames are conditioned on the embeddings of the description of scene 2.
            
         </div>
         <br>
@@ -323,12 +323,25 @@
   </div>
 </section>
 
+<!-- Qualitative Examples -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Examples</h2>
+        <img src="./static/images/time_aligned_examples.png" alt="time_aligned_example" width="80%">
+        <br>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Examples -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Generated Examples</h2>
+        <h2 class="title is-3">Generated Video Examples</h2>
         <div class="content has-text-justified">
           <p>
             We show videos generated using merging captions baseline and TALC for various multi-scene descriptions. Overall, we find that the merging captions baseline generates poor quality videos. 
@@ -360,6 +373,28 @@
           <!-- <p>Caption.</p> -->
           </div>
 
+          <!-- <h3>Coref-SV</h3> -->
+          <!-- example -->
+          <div class="content example">
+            <div class="example-prompt" style="text-align: left; width: 80%;margin:auto">
+              Scene 1: Spiderman is surfing on the waves.<br>
+              Scene 2: Darth Vader is surfing on the same waves.<br>
+            </div>
+            <br>
+            <div class="example-gifs">
+                <div>
+                  <p><b>Merging Captions</b></p>
+                  <img src="./static/images/91_baseline.gif" alt="Teaser" width="80%">
+                </div>
+                <div>
+                  <p><b>TALC (Ours)</b></p>
+                  <img src="./static/images/1_talc.gif" alt="Teaser" width="80%">
+                </div>
+            </div>
+            <br>
+          <!-- <p>Caption.</p> -->
+          </div>
+
           <!-- example -->
           <div class="content example">
             <div class="example-prompt" style="text-align: left; width: 80%;margin:auto">
@@ -380,30 +415,6 @@
             <br>
           <!-- <p>Caption.</p> -->
           </div>
-
-          <!-- example -->
-          <div class="content example">
-            <div class="example-prompt" style="text-align: left; width: 80%;margin:auto">
-              Scene 1: A cook pours the batter into a pan.<br>
-              Scene 2: The cook stirs the batter in the pan.<br>
-              Scene 3: The cook puts the cake on the table.<br>
-              Scene 4: The cook cuts the cake on the table.<br>
-            </div>
-            <br>
-            <div class="example-gifs">
-                <div>
-                  <p><b>Merging Captions</b></p>
-                  <img src="./static/images/32_baseline.gif" alt="Teaser" width="80%">
-                </div>
-                <div>
-                  <p><b>TALC (Ours)</b></p>
-                  <img src="./static/images/32_talc.gif" alt="Teaser" width="80%">
-                </div>
-            </div>
-            <br>
-          <!-- <p>Caption.</p> -->
-          </div>
-
 
           <!-- example -->
           <div class="content example">
@@ -469,7 +480,51 @@
             <br>
           <!-- <p>Caption.</p> -->
           </div>
-          
+
+                    <!-- <h3>Coref-SV</h3> -->
+          <!-- example -->
+          <div class="content example">
+            <div class="example-prompt" style="text-align: left; width: 80%;margin:auto">
+              Scene 1: Superman is flying in the air.<br>
+              Scene 2: Spiderman is flying in the air.<br>
+            </div>
+            <br>
+            <div class="example-gifs">
+                <div>
+                  <p><b>Merging Captions</b></p>
+                  <img src="./static/images/93_baseline.gif" alt="Teaser" width="80%">
+                </div>
+                <div>
+                  <p><b>TALC (Ours)</b></p>
+                  <img src="./static/images/12_talc.gif" alt="Teaser" width="80%">
+                </div>
+            </div>
+            <br>
+          <!-- <p>Caption.</p> -->
+          </div>
+
+                  <!-- example -->
+                  <div class="content example">
+                    <div class="example-prompt" style="text-align: left; width: 80%;margin:auto">
+                      Scene 1: A cook pours the batter into a pan.<br>
+                      Scene 2: The cook stirs the batter in the pan.<br>
+                      Scene 3: The cook puts the cake on the table.<br>
+                      Scene 4: The cook cuts the cake on the table.<br>
+                    </div>
+                    <br>
+                    <div class="example-gifs">
+                        <div>
+                          <p><b>Merging Captions</b></p>
+                          <img src="./static/images/32_baseline.gif" alt="Teaser" width="80%">
+                        </div>
+                        <div>
+                          <p><b>TALC (Ours)</b></p>
+                          <img src="./static/images/32_talc.gif" alt="Teaser" width="80%">
+                        </div>
+                    </div>
+                    <br>
+                  <!-- <p>Caption.</p> -->
+                  </div>        
         </div>
 
       </div>
