@@ -215,7 +215,6 @@
         </div>
       </div>
     </div>
-  </div>
 </section>
 
 
@@ -233,7 +232,7 @@
           During the generation process of the video, the initial half of the video frames are conditioned on the embeddings of the description of scene 1 (ry1 ), while the subsequent video frames are conditioned on the embeddings of the description of scene 2 (ry2 ).
         </div>
 
-        <br><br>
+        <br>
 
         
         <div class="content has-text-justified">
@@ -259,11 +258,11 @@
         
         <img src="./static/images/data_gen.png" alt="Teaser" width="80%">
         <div class="content has-text-justified">
-          Figure 4: <b>The architecture of Time-Aligned Captions (TALC).</b> 
+          Figure 3: <b>The architecture of Time-Aligned Captions (TALC).</b> 
           During the generation process of the video, the initial half of the video frames are conditioned on the embeddings of the description of scene 1 (ry1 ), while the subsequent video frames are conditioned on the embeddings of the description of scene 2 (ry2 ).
            
         </div>
-        <br><br>
+        <br>
 
         <div class="content has-text-justified">
           <p>
@@ -278,7 +277,7 @@
             We start with a basic video-text dataset and use the PySceneDetect library to identify different scenes within a video. 
             We then select a representative frame from each scene to capture its essence. 
             These frames, along with the overall video caption, are fed into a large multimodal model to generate coherent, scene-specific captions. 
-            Using this method, illustrated in Figure 4, we generated 20k video scene-captions. The generated dataset consists of 73% multi-scene videos. 
+            Using this method, illustrated in Figure 3, we generated 20k video scene-captions. The generated dataset consists of 73% multi-scene videos. 
           </p>
         </div>
 
@@ -296,7 +295,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Experimental Results</h2>
 
-        <img src="./static/images/results.png" alt="Teaser" width="80%">
+        <img src="./static/images/results.png" alt="Teaser" width="60%">
         <div class="content has-text-justified">
           <b>Figure 4: Automatic evaluation results for (a) ModelScope and (b) Lumiere.</b> 
           In (a), we observe that TALC-finetuned ModelScope model achieves the highest overall score, that is the average of the visual consistency and text adherence scores. 
@@ -304,7 +303,7 @@
           across the diverse multi-scene prompts and the number of generated scenes.
         </div>
 
-        <br><br>
+        <br>
         <div class="content has-text-justified">
           <p>
             We show the efficacy of TALC in multi-scene video generation by utilizing two models: ModelScope and Lumiere.
@@ -352,7 +351,7 @@
           <div class="content example">
             <div class="example-prompt" style="text-align: left; width: 80%;margin:auto">
               Scene 1: Superman is surfing on the waves.<br>
-              Scene 2: The Superman falls into the water..<br>
+              Scene 2: The Superman falls into the water.<br>
             </div>
             <br>
             <div class="example-gifs">
