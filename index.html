@@ -159,25 +159,8 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Recent advances in diffusion-based generative modeling have led to the development of text-to-video (T2V) models that can generate high-quality videos conditioned on a 
-            text prompt. Most of these T2V models often produce single-scene video clips that depict an entity performing a particular action (e.g., ‘a red panda climbing a tree’). 
-            However, it is pertinent to synthesize multi-scene generated videos since they are ubiquitous in the real-world (e.g., ‘a red panda climbing a tree’ followed by ‘the red 
-            panda sleeps on the top of the tree’).
-          </p>
-
-          <p>
-            To generate multi-scene videos from the pretrained T2V model, we introduce <b>Time-Aligned Captions (TALC) framework</b>. In particular, we introduce a simple and novel inductive 
-            bias to the text-conditioning mechanism in the T2V architecture that makes the <b>model aware of the temporal alignment between the video scenes and their respective scene 
-            descriptions.</b>
-          </p>
-
-          <p>
-            As a result, we find that the T2V model can generate visually consistent (e.g., entity and background) videos that adhere to the multi-scene text descriptions. Further, 
-            we finetune the pretrained T2V model with multi-scene video-text data using the TALC framework. We observe that <b>TALC-finetuned model outperforms the baseline methods by 
-            15.5 points </b> on the overall score, average of visual consistency and text adherence, across a diverse task prompts and number of generated scenes under the automatic and 
-            human evaluations.
-          </p>
-    
+            Recent advances in diffusion-based generative modeling have led to the development of text-to-video (T2V) models that can generate high-quality videos conditioned on a text prompt. Most of these T2V models often produce single-scene video clips that depict an entity performing a particular action (e.g., `a red panda climbing a tree'). However, it is pertinent to generate multi-scene videos since they are ubiquitous in the real-world (e.g., `a red panda climbing a tree' followed by `the red panda sleeps on the top of the tree'). To generate multi-scene videos from the pretrained T2V model, we introduce \textbf{T}ime-\textbf{Al}igned \textbf{C}aptions (\name) framework. Specifically, we enhance the text-conditioning mechanism in the T2V architecture to recognize the temporal alignment between the video scenes and scene descriptions. For instance, we condition the visual features of the earlier and later scenes of the generated video with the representations of the first scene description (e.g., `a red panda climbing a tree') and second scene description (e.g., `the red panda sleeps on the top of the tree'), respectively. As a result, we show that the T2V model can generate multi-scene videos that adhere to the multi-scene text descriptions and be visually consistent (e.g., entity and background). Further, we finetune the pretrained T2V model with multi-scene video-text data using the \name framework. We show that the \name-finetuned model outperforms the baseline methods by 15.5 points in the overall score, which averages visual consistency and text adherence using human evaluation. The project website is \href{https://talc-mst2v.github.io/}{https://talc-mst2v.github.io/}.
+          </p>    
         </div>
       </div>
     </div>
